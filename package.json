@@ -1,3 +1,13 @@
 {
-
+	"name": "feed",
+	"version": "0.1.0",
+	"dependencies": {
+		"argv": "0.0.2",
+		"http": "0.0.0",
+		"xml2js": "0.4.13",
+		"redis": "2.2.5"
+	},
+	"bin": {
+		"feed": "bin/feed.js"
+	}
 }
