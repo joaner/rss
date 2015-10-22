@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
 /* GET feed list page. */
 router.get('/feed', function(req, res, next) {
   var redis = require("lib/redis").client;
+  var config = require("lib/config").config;
+
   var last = req.last || 10000000000000, limit = 10;
 
   redis.zrevrangebyscore(["rss:site:0", last, 0, "LIMIT", 0, limit], function(err, feeds){
@@ -17,7 +19,7 @@ router.get('/feed', function(req, res, next) {
 	for (var k in feeds) {
 		feeds[k] = JSON.parse(feeds[k]);
 	}
-	res.render('feed', { title: 'Feed', feeds: feeds });
+	res.render('feed', { title: 'Feed', feeds: feeds, sites: config.sites});
   });
 });
 

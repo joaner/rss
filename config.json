@@ -1,4 +1,12 @@
 {
+	"sites": [
+		{
+			"title": "小艾的博客",
+			"url": "https://xiaoai.me",
+			"rss": "https://xiaoai.me/?feed=rss2",
+			"unread_num": 2
+		}
+	],
 	"redis": {
 		"host": "127.0.0.1",
 		"port": 6379

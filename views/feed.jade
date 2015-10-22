@@ -3,16 +3,18 @@ extends layout
 block content
   div(class="ui container")
     div(class="ui header")
-    div(class="ui grid center aligned")
-      div(class="three wide column")
-        div(class="ui vertical menu")
-          a(class="item active") 订阅网站
-          a(class="item") 阅读设置
-          a(class="item") 检查状态
-      div(class="six wide column")
-        h1= title
-        p Welcome to #{title}
-
-        br
-        each item in feeds
-          h2= item.title
+    br
+    div(class="ui grid")
+      div(class="four wide column")
+        div(class="ui vertical fluid tabular menu")
+          each site in sites
+            a(class="item active") 
+              =site.title
+              div(class="ui label")=site.unread_num
+      div(class="twelve wide stretched column")
+        div(class="ui relaxed divided list")
+          each item in feeds
+            div(class="item")
+              div(class="content")
+                a(class="header")= item.title
+                p(class="description")= item.pubDate
