@@ -8,10 +8,7 @@ var sites = [
 	"https://xiaoai.me?feed=rss2"
 ];
 
-var redis = require("redis").createClient({
-   	host: "127.0.0.1",
-    port: 6379
-});
+var redis = require("lib/redis").client;
 
 var k = 0;
 for (; k < sites.length; ++k) {
