@@ -1,9 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="ui container")
+    div(class="ui header")
+    div(class="ui grid center aligned")
+      div(class="three wide column")
+        div(class="ui vertical menu")
+          a(class="item active") 订阅网站
+          a(class="item") 阅读设置
+          a(class="item") 检查状态
+      div(class="six wide column")
+        h1= title
+        p Welcome to #{title}
 
-  br
-  each item in feeds
-    h2= item.title
+        br
+        each item in feeds
+          h2= item.title
